@@ -2,19 +2,24 @@
 
 var guess, answer, message;
 
-guess = prompt("How many glasses of water did you drink today?");
-console.log("The user drank " + guess);
+guess = prompt("How tall is the Seattle Space Needle in feet?");
+console.log("The user guessed " + guess + "feet");
 
+answer = 605
 
-answer >=8;
-console.log("The answer is " + answer);
-
-if (guess === answer){
-  message = "Way to stay hydrated!"
-} else {
-  message = "Go pour yourself a glass!"
+while (guess!== answer) {
+  if (guess > answer){
+    alert ("Thats too tall")
+    guess = prompt ("Try again")}
+else if (guess < answer){
+  alert ("No, thats too short!")
+  guess = prompt ("Try again")
 }
+else {
+  alert ("Great job! You know must know this city well")
+  break;
+}
+  }
 
-alert(message);
 
 </script>
