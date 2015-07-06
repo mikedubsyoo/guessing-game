@@ -1,19 +1,20 @@
 <script>
 
-var guess, answer, message;
+var guess, message="Way to stay hydrated";
 
 guess = prompt("How many glasses of water did you drink today?");
 console.log("The user drank " + guess);
 
 
-answer >=8;
-console.log("The answer is " + answer);
+if (guess > 0)
+  message = "Go drink some water now!"
 
-if (guess === answer){
-  message = "Way to stay hydrated!"
-} else {
-  message = "Go pour yourself a glass!"
-}
+
+if(guess > 3)
+  message = "You're doing okay, but another glass wouldnt hurt"
+
+if(guess >=8)
+  message = "Way to stay hydrated"
 
 alert(message);
 
