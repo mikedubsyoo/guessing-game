@@ -1,25 +1,48 @@
 <script>
-
-var guess, answer, message;
+var guess,
+    answer,
+    message,
+    guess2,
+    answer2;
 
 guess = prompt("How tall is the Seattle Space Needle in feet?");
 console.log("The user guessed " + guess + "feet");
 
-answer = 605
+answer = "605";
 
-while (guess!== answer) {
+while (guess !== answer) {
+
   if (guess > answer){
-    alert ("Thats too tall")
-    guess = prompt ("Try again")}
-else if (guess < answer){
-  alert ("No, thats too short!")
-  guess = prompt ("Try again")
-}
-else {
-  alert ("Great job! You know must know this city well")
-  break;
-}
+    alert ("Thats too tall");
+    guess = prompt("Try again");
+
+  } else if (guess < answer){
+    alert ("No, thats too short!");
+    guess = prompt("Try again");
   }
+}
+
+alert ("Great job! You know must know this city well");
+
+guess2 = prompt("Ok, but now how tall is the Columbia Tower?")
+console.log("The user guessed " + guess + "feet");
+
+answer2 = "933";
+
+while(guess2 !== answer2) {
+
+  if(guess2 > answer2){
+    alert("Thats too tall")
+    guess2 = prompt("Try again");
+  }
+  else if(guess2 < answer2){
+    alert("Nope, thats not tall enough")
+    guess2 = prompt ("Try again");
+  }
+}
 
 
+
+alert("Great job! You know must know this city well");
 </script>
+
