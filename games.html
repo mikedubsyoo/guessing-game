@@ -1,48 +1,51 @@
+
+
+
 <script>
-var guess,
-    answer,
-    message,
-    guess2,
-    answer2;
 
-guess = prompt("How tall is the Seattle Space Needle in feet?");
-console.log("The user guessed " + guess + "feet");
-
-answer = "605";
-
-while (guess !== answer) {
-
-  if (guess > answer){
-    alert ("Thats too tall");
-    guess = prompt("Try again");
-
-  } else if (guess < answer){
-    alert ("No, thats too short!");
-    guess = prompt("Try again");
-  }
+var Game = function(building, height) {
+  this.building = building;
+  this.height = height;
+  this.guesses = 0;
+  this.attempts = 3;
+  this.makeGuess = function() {
+    this.lastGuess = prompt('How tall is the ' + this.building + '?');
+    this.guesses++;
+    return this.lastGuess;
+  };
 }
 
-alert ("Great job! You know must know this city well");
+var game1 = new Game("Space Needle", "605");
 
-guess2 = prompt("Ok, but now how tall is the Columbia Tower?")
-console.log("The user guessed " + guess + "feet");
+while(game1.guesses < game1.attempts && guess != game1.height) {
+  var guess = game1.makeGuess();
+  if (guess === game1.height) {
+    alert('You got it!  You must know this city really well!');
+  } else if (game1.guesses === game1.attempts) {
+    alert("Nice try! The " + game1.building + " is actually " + game1.height + " feet tall.  Now try this one!");
+  } else if (guess > game1.height) {
+    alert("That's a little too tall.");  
+  } else if (guess < game1.height) {
+    alert("That's a little too short.");
+  } 
 
-answer2 = "933";
 
-while(guess2 !== answer2) {
-
-  if(guess2 > answer2){
-    alert("Thats too tall")
-    guess2 = prompt("Try again");
-  }
-  else if(guess2 < answer2){
-    alert("Nope, thats not tall enough")
-    guess2 = prompt ("Try again");
-  }
 }
 
 
+var game2 = new Game("Columbia Tower", "933");
+while(game2.guesses < game2.attempts && guess != game2.height) {
+  var guess = game2.makeGuess();
+  if (guess === game2.height) {
+    alert('You got it!  You must know this city really well! Thanks for playing!!')
+  } else if (game2.guesses === game2.attempts) {
+    alert("Nice try! The " + game2.building + " is actually " + game2.height + " feet tall.  Thanks for playing!");
+  } else if (guess > game2.height) {
+    alert("That's a little too tall.  Try again.");  
+  } else if (guess < game2.height) {
+    alert("That's a little too short.  Try again.");
+  }
+}
 
-alert("Great job! You know must know this city well");
 </script>
 
