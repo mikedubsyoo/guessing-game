@@ -20,15 +20,14 @@ var game1 = new Game("Space Needle", "605");
 while(game1.guesses < game1.attempts && guess != game1.height) {
   var guess = game1.makeGuess();
   if (guess === game1.height) {
-    alert('You got it!  You must know this city really well!');
+    alert('You got it!  You must know this city well!');
   } else if (game1.guesses === game1.attempts) {
     alert("Nice try! The " + game1.building + " is actually " + game1.height + " feet tall.  Now try this one!");
   } else if (guess > game1.height) {
-    alert("That's a little too tall.");  
+    alert("That's a little too tall.");
   } else if (guess < game1.height) {
     alert("That's a little too short.");
-  } 
-
+  }
 
 }
 
@@ -37,12 +36,26 @@ var game2 = new Game("Columbia Tower", "933");
 while(game2.guesses < game2.attempts && guess != game2.height) {
   var guess = game2.makeGuess();
   if (guess === game2.height) {
-    alert('You got it!  You must know this city really well! Thanks for playing!!')
+    alert('You got it! One more...')
   } else if (game2.guesses === game2.attempts) {
     alert("Nice try! The " + game2.building + " is actually " + game2.height + " feet tall.  Thanks for playing!");
   } else if (guess > game2.height) {
-    alert("That's a little too tall.  Try again.");  
+    alert("That's a little too tall.  Try again.");
   } else if (guess < game2.height) {
+    alert("That's a little too short.  Try again.");
+  }
+}
+
+var game3 = new Game("Seattle Great Wheel", "175");
+while(game3.guesses < game3.attempts && guess != game3.height) {
+  var guess = game3.makeGuess();
+  if (guess === game3.height) {
+    alert('You got it!  You must know this city really well! Thanks for playing!!')
+  } else if (game3.guesses === game3.attempts) {
+    alert("Nice try! The " + game3.building + " is actually " + game3.height + " feet tall.  Thanks for playing!");
+  } else if (guess > game3.height) {
+    alert("That's a little too tall.  Try again.");
+  } else if (guess < game3.height) {
     alert("That's a little too short.  Try again.");
   }
 }
